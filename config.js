@@ -36,7 +36,8 @@ var config = {
 		{
 			module: "clock",
 			clockBold:true,
-			showDate:true,
+			showDate:false,
+			displayType:"both",
 			position: "top_left"
 		},
 		{
