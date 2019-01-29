@@ -84,8 +84,19 @@ var config = {
 						title: "左岸读书",
 						url: "http://www.zreading.cn/feed"
 					}
+					,
+					{
+						title: "FT中文网",
+						url: "http://www.ftchinese.com/rss/feed"
+
+					},
+					{
+						title: "今日焦点",
+						url: "hhttp://www.ftchinese.com/rss/news"
+
+					}
 				],
-				showSourceTitle: true,
+				showSourceTitle: false,
 				showPublishDate: true
 			}
 		},
