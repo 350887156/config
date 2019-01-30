@@ -28,13 +28,9 @@
             "updateInterval": 10000
         },
         {
-            "accessory": "ComputerSpeakers",
-            "name": "树莓派音量"
-        },
-        {
             "accessory": "mqtt-switch-tasmota",
-            "name": "sonoff",
-            "url": "mqtt://47.92.163.13",
+            "name": "开关",
+            "url": "mqtt://",
             "username": "",
             "password": "",
             "topics": {
