@@ -1,0 +1,55 @@
+{
+    "bridge": {
+        "name": "HomeKit",
+        "username": "B8:27:EB:10:61:E5",
+        "port": 51825,
+        "pin": "012-34-567"
+    },
+    "platforms": [
+        {
+            "platform": "config",
+            "name": "Config",
+            "port": 9999,
+            "sudo": true
+        },
+        {
+            "platform": "rpi-camera",
+            "cameras": [
+                {
+                    "name": "Pi Camera"
+                }
+            ]
+        }
+    ],
+    "accessories": [
+        {
+            "accessory": "RaspberryPiTemperature",
+            "name": "树莓派温度",
+            "updateInterval": 10000
+        },
+        {
+            "accessory": "ComputerSpeakers",
+            "name": "树莓派音量"
+        },
+        {
+            "accessory": "mqtt-switch-tasmota",
+            "name": "sonoff",
+            "url": "mqtt://47.92.163.13",
+            "username": "",
+            "password": "",
+            "topics": {
+                "statusGet": "stat/sonoff/POWER",
+                "statusSet": "cmnd/sonoff/POWER",
+                "stateGet": "tele/sonoff/STATE"
+            },
+            "onValue": "ON",
+            "offValue": "OFF",
+            "activityTopic": "tele/sonoff/LWT",
+            "activityParameter": "Online",
+            "startCmd": "cmnd/sonoff/TelePeriod",
+            "startParameter": "60",
+            "manufacturer": "ITEAD",
+            "model": "Sonoff"
+        }
+    ]
+}
