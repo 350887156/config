@@ -11,14 +11,6 @@
             "name": "Config",
             "port": 9999,
             "sudo": true
-        },
-        {
-            "platform": "rpi-camera",
-            "cameras": [
-                {
-                    "name": "Pi Camera"
-                }
-            ]
         }
     ],
     "accessories": [
@@ -30,7 +22,7 @@
         {
             "accessory": "mqtt-switch-tasmota",
             "name": "开关",
-            "url": "mqtt://",
+            "url": "mqtt://47.92.163.13",
             "username": "",
             "password": "",
             "topics": {
