@@ -8,15 +8,36 @@
     "platforms": [
         {
             "platform": "config",
-            "name": "Config",
-            "port": 9999,
+            "name": "后台管理",
+            "port": 8080,
             "sudo": true
         },
         {
-            "platform": "rpi-camera",
-            "cameras": [
+            "platform": "BroadlinkRM",
+            "name": "Broadlink RM",
+            "hosts": [
                 {
-                    "name": "Pi Camera"
+                    "address": "192.168.31.236",
+                    "mac": "78:0F:77:47:F9:BF",
+                    "isRFSupported": true
+                }
+            ],
+            "accessories": [
+                {
+                    "name": "空调温度调整",
+                    "type": "air-conditioner",
+                    "data": {
+                        "on": "",
+                        "off": ""
+                    }
+                },
+                {
+                    "name": "空调",
+                    "type": "switch",
+                    "data": {
+                        "on": "26007800200001702064206420641feb20e921641f651f63200004d6200001702064206420ea20641f651feb1feb1fe91f0004d91f00017120ea1feb1feb20ea206420641f6420631f0004d8200001701feb20641f6520641f65206320642063200004d72000017020641feb1f651f651f65206420ea1f631f000d05",
+                        "off": "260078001f0001711f651f65206420ea1feb1f651f651f631f0004d91f000171206420641feb1f651f651feb1fe822e9200004d7200001701fea20ea20ea20ea20641f651f652062200004d81f0001711feb1f65206420641f651f651f651f631f0004d820000170206420e821651f651f651f651f651f631f000d05"
+                    }
                 }
             ]
         }
@@ -26,26 +47,6 @@
             "accessory": "RaspberryPiTemperature",
             "name": "树莓派温度",
             "updateInterval": 10000
-        },
-        {
-            "accessory": "mqtt-switch-tasmota",
-            "name": "开关",
-            "url": "mqtt://",
-            "username": "",
-            "password": "",
-            "topics": {
-                "statusGet": "stat/sonoff/POWER",
-                "statusSet": "cmnd/sonoff/POWER",
-                "stateGet": "tele/sonoff/STATE"
-            },
-            "onValue": "ON",
-            "offValue": "OFF",
-            "activityTopic": "tele/sonoff/LWT",
-            "activityParameter": "Online",
-            "startCmd": "cmnd/sonoff/TelePeriod",
-            "startParameter": "60",
-            "manufacturer": "ITEAD",
-            "model": "Sonoff"
         }
     ]
 }
