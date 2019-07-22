@@ -21,7 +21,7 @@
         },
         {
             "accessory": "mqtt-switch-tasmota",
-            "name": "开关",
+            "name": "鱼缸灯",
             "url": "mqtt://47.92.163.13",
             "username": "",
             "password": "",
