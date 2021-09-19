@@ -51,12 +51,13 @@
         {
             "accessory": "mqtt-switch-tasmota",
             "name": "鱼缸灯",
-            "url": "mqtt://47.92.163.13",
+            "url": "mqtt://192.168.1.132",
             "username": "",
             "password": "",
             "topics": {
-                "statusGet": "stat/sonoff/POWER",
+                "statusGet": "stat/sonoff/RESULT",
                 "statusSet": "cmnd/sonoff/POWER",
+                "dimmerSet": "cmnd/sonoff/Dimmer",
                 "stateGet": "tele/sonoff/STATE"
             },
             "onValue": "ON",
