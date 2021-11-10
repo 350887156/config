@@ -269,3 +269,25 @@ docker run -d --name emqx-ee --restart=always -p 1883:1883 -p 8081:8081 -p 8083:
  
  http://192.168.1.132/
 ```
+
+# samba 新
+```
+
+sudo iptables -I INPUT -p tcp --dport 139 -j ACCEPT
+sudo iptables -I INPUT -p tcp --dport 445 -j ACCEPT
+
+sudo iptables -I INPUT -p udp --dport 137 -j ACCEPT
+sudo iptables -I INPUT -p udp --dport 138 -j ACCEPT
+
+docker run -it -p 139:139 -p 445:445 --name samba -d --rm  \
+ -v /mnt/sda1:/mount \
+ dperson/samba \
+ -u "pi;raspberry" \
+ -s "pi;/mount/;yes;no;yes;all;all;all" \
+ -w "WORKGROUP" \
+ -g "force user=pi" \
+ -g "guest account=pi"
+ 
+ 
+```
+
