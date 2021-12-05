@@ -159,7 +159,7 @@ docker run -d \
   --restart=always  \
   --name minidlna \
   --net=host \
-  -v /mnt/sda1/minidlna:/etc/minidlna \
+  -v /mnt/sda1/config/minidlna:/etc/minidlna \
   -v /mnt/sda1:/media \
   lstcml/minidlna
   
@@ -196,9 +196,9 @@ docker run \
 --restart=always \
 --privileged \
 --net=host \
---tmpfs /mnt/sda1/wxedge_storage/run \
---tmpfs /mnt/sda1/wxedge_storage/tmp \
--v /mnt/sda1/wxedge_storage:/storage:rw \
+--tmpfs /mnt/sda1/wxedge/run \
+--tmpfs /mnt/sda1/wxedge/tmp \
+-v /mnt/sda1/wxedge:/storage:rw \
 -d \
 registry.cn-hangzhou.aliyuncs.com/onething/wxedge
 
@@ -214,7 +214,7 @@ docker run -d --name npc --net=host ffdfgdfg/npc -server=42.193.108.105:8024 -vk
 
 
 docker pull jellyfin/jellyfin
-sudo mkdir -p /mnt/sda1/jellyfin/config
+sudo mkdir -p /mnt/sda1/config/jellyfin/config
 sudo mkdir -p /mnt/sda1/jellyfin/cache
 sudo chown -R pi /mnt/sda1/jellyfin
 docker volume create jellyfin-config
@@ -230,7 +230,7 @@ sudo docker run -d \
  --user 1000:27 \
  --restart=always \
  --net=host \
- --volume /mnt/sda1/jellyfin/config:/config \
+ --volume /mnt/sda1/config/jellyfin/config:/config \
  --volume /mnt/sda1/jellyfin/cache:/cache \
  --mount type=bind,source=/mnt/sda1,target=/media \
  --restart=unless-stopped \
@@ -263,7 +263,7 @@ docker run -d --name emqx-ee --restart=always -p 1883:1883 -p 8081:8081 -p 8083:
   -e LISTEN_PORT=6888 \
   -p 6888:6888 \
   -p 6888:6888/udp \
-  -v /mnt/sda1/aria2/aria2-config:/config \
+  -v /mnt/sda1/config/aria2/aria2-config:/config \
   -v /mnt/sda1/downloads:/downloads \
   p3terx/aria2-pro
  
