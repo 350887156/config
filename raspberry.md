@@ -267,8 +267,13 @@ docker run -d --name emqx-ee --restart=always -p 1883:1883 -p 8081:8081 -p 8083:
   -v /mnt/sda1/downloads:/downloads \
   p3terx/aria2-pro
  
- 
- http://192.168.1.132/
+docker run -d \
+    --name ariang \
+    --log-opt max-size=1m \
+    --restart unless-stopped \
+    -p 6880:6880 \
+    p3terx/ariang
+    
 ```
 
 # samba 新
