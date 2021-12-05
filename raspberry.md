@@ -37,10 +37,11 @@ sudo reboot
 df -lh
 lsblk
 sudo mkdir -p /mnt/sda1
-sudo mount /dev/sda /mnt/sda1/
+
 ## 自动挂载硬盘
-sudo nano /etc/fstab
-/dev/sda /mnt/sda1 auto defaults,nofail,x-systemd.device-timeout-1,noatime 0 0
+sudo nano /boot/rc-loca
+sudo mount /dev/sda /mnt/sda1/
+
 
 ## docker
 sudo curl -sSL https://get.docker.com | sh
