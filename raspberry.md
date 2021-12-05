@@ -2,7 +2,7 @@
 wget https://github.com/joan2937/pigpio/archive/master.zip
 
 sudo apt-get install gcc g++
-sudo apt-get install -y python-smbus python pigpio python-pigpio python3-pigpio git
+sudo apt-get install -y python-smbus python make python-pigpio python3-pigpio git
 
 unzip master.zip
 cd cd pigpio-master
