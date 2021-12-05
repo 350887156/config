@@ -154,14 +154,12 @@ docker run -d --name nps --net=host -v /mnt/sda1/nps/config:/conf ffdfgdfg/nps
 
 
 ## dlna 安装
-docker pull ugeek/dlna
 docker run -d \
-  --restart=always  \
-  --name minidlna \
   --net=host \
-  -v /mnt/sda1/config/minidlna:/etc/minidlna \
   -v /mnt/sda1:/media \
-  lstcml/minidlna
+  -e MINIDLNA_MEDIA_DIR=/media \
+  -e MINIDLNA_FRIENDLY_NAME=MyMini \
+  vladgh/minidlna
   
   
 # 支持https
