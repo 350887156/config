@@ -39,7 +39,7 @@ lsblk
 sudo mkdir -p /mnt/sda1
 
 ## 自动挂载硬盘
-sudo nano /boot/rc-loca
+sudo nano /boot/rc-local
 sudo mount /dev/sda /mnt/sda1/
 
 
