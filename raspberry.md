@@ -295,4 +295,7 @@ docker run -it -p 139:139 -p 445:445 --name samba -d --rm  \
  
  
 ```
+## 自启脚本
+编辑脚本文件 "/boot/rc-local" ，在 “exit 0” 前加入自定义的脚本内容。
+
 
