@@ -156,6 +156,7 @@ docker run -d --name nps --net=host -v /mnt/sda1/nps/config:/conf ffdfgdfg/nps
 ## dlna 安装
 docker run -d \
   --net=host \
+  --restart=always \
   -v /mnt/sda1:/media \
   -e MINIDLNA_MEDIA_DIR=/media \
   -e MINIDLNA_FRIENDLY_NAME=MyMini \
@@ -213,8 +214,8 @@ docker run -d --name npc --net=host ffdfgdfg/npc -server=42.193.108.105:8024 -vk
 
 docker pull jellyfin/jellyfin
 sudo mkdir -p /mnt/sda1/config/jellyfin/config
-sudo mkdir -p /mnt/sda1/jellyfin/cache
-sudo chown -R pi /mnt/sda1/jellyfin
+sudo mkdir -p /mnt/sda1/config/jellyfin/cache
+sudo chown -R pi /mnt/sda1/config/jellyfin
 docker volume create jellyfin-config
 docker volume create jellyfin-cache
 id #查看uid:gid
@@ -229,7 +230,7 @@ sudo docker run -d \
  --restart=always \
  --net=host \
  --volume /mnt/sda1/config/jellyfin/config:/config \
- --volume /mnt/sda1/jellyfin/cache:/cache \
+ --volume /mnt/sda1/config/jellyfin/cache:/cache \
  --mount type=bind,source=/mnt/sda1,target=/media \
  --restart=unless-stopped \
  jellyfin/jellyfin
