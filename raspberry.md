@@ -344,3 +344,12 @@ docker run -it -p 139:139 -p 445:445 --name samba -d --rm  \
 编辑脚本文件 "/boot/rc-local" ，在 “exit 0” 前加入自定义的脚本内容。
 
 ```
+
+
+## 7inch HDMI LCD(C)
+```
+hdmi_group=2
+hdmi_mode=87
+hdmi_cvt 1024 600 60 6 0 0 0
+hdmi_drive=1
+```
