@@ -48,7 +48,12 @@ sudo mkdir -p /mnt/sda1
 sudo nano /boot/rc-local
 sudo mount /dev/sda /mnt/sda1/
 ```
-
+## debian 自动挂载硬盘
+```
+sudo mkdir -p /mnt/sda1
+sudo nano /etc/fstab 
+/dev/sda /mnt/sda1 ext4 defaults 0 0
+```
 
 ## docker
 ```
