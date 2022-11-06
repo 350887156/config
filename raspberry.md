@@ -358,3 +358,17 @@ hdmi_mode=87
 hdmi_cvt 1024 600 60 6 0 0 0
 hdmi_drive=1
 ```
+
+## 交换空间
+
+```
+sudo nano /etc/dphys-swapfile
+CONF_SWAPSIZE=1024
+
+sudo dphys-swapfile setup
+```
+
+## OpenMediaVault
+```
+sudo wget -O - https://github.com/OpenMediaVault-Plugin-Developers/installScript/raw/master/install | sudo bash
+```
