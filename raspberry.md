@@ -385,3 +385,9 @@ deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-backports main con
 deb https://mirrors.tuna.tsinghua.edu.cn/debian-security bullseye-security main contrib non-free
 deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security bullseye-security main contrib non-free
 ```
+
+## argon eon
+
+```
+curl https://download.argon40.com/argoneon.sh | bash
+```
