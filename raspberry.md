@@ -365,7 +365,8 @@ hdmi_drive=1
 sudo nano /etc/dphys-swapfile
 CONF_SWAPSIZE=1024
 
-sudo dphys-swapfile setup
+sudo /etc/init.d/dphys-swapfile stop
+sudo /etc/init.d/dphys-swapfile start
 ```
 
 ## OpenMediaVault
