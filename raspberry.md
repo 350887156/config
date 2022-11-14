@@ -392,3 +392,11 @@ deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security bullseye-security m
 ```
 curl https://download.argon40.com/argoneon.sh | bash
 ```
+
+## Raid 0
+
+```
+sudo mdadm --create --verbose /dev/md0 --level=0 --raid-devices=2 /dev/sda /dev/sdb
+
+```
+
