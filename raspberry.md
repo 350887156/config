@@ -1,4 +1,5 @@
 ## pigpio
+
 ```
 
 wget https://github.com/joan2937/pigpio/archive/master.zip
@@ -21,6 +22,7 @@ sudo bash install.sh
 
 
 ## x735-v2.5
+
 ```
 
 wget -qO- https://tech.biko.pub/resource/rpi-replace-apt-source-buster.sh | sudo bash && sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install -y python-smbus python pigpio python-pigpio python3-pigpio git
@@ -41,6 +43,7 @@ sudo reboot
 
 
 ## 自动挂载硬盘
+
 ```
 df -lh
 lsblk
@@ -56,10 +59,12 @@ sudo nano /etc/fstab
 ```
 
 ## docker
+
 ```
 sudo curl -sSL https://get.docker.com | sh
 ```
 ## piGPIO
+
 ```
 docker run -it -p 8888:8888 --privileged zinen2/alpine-pigpiod
 
@@ -69,6 +74,7 @@ sudo nano /etc/docker/daemon.json
 ```
 
 ## docker源
+
 ```
 在/etc/docker/目录下创建daemon.json，添加如下内容：
 {
@@ -85,6 +91,7 @@ sudo docker network create -d macvlan --subnet=192.168.1.0/24 --gateway=192.168.
 ```
 
 ## qbittorrent 安装
+
 ```
 sudo docker run -d   --name=qbittorrent  \
 --mount source=share,target=/mnt/sda1 \
@@ -129,6 +136,7 @@ vim /etc/config/network
 ```
 
 ## filebrowser
+
 ```
 curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bash
 filebrowser -r /mnt/sda1/
@@ -140,12 +148,14 @@ sudo bash filebrowser -r /mnt/sda1/ install.sh
 
 
 ## sambar 开启
+
 ```
 sudo docker exec -it openwrt bash
 smbpasswd  -a root
 修改不同密码
 
 ```
+
 ## amule
 
 ```
@@ -173,19 +183,23 @@ sudo docker run -d \
   
 ```
 ## 解决docker权限问题
+
 ```
 cd /var/run
 sudo chmod 666 docker.sock
 ```
 
 ## fileBrowser
+
 ```
 sudo touch /mnt/sda1/filebrowser/filebrowser.db
 sudo touch /mnt/sda1/filebrowser/.filebrowser.json
 
 docker run -d --name fb -v /mnt/sda1/:/srv  -p 8990:80 filebrowser/filebrowser
 ```
+
 ## NPS
+
 
 ```
 docker pull ffdfgdfg/nps
@@ -204,6 +218,7 @@ docker run -d \
 ```
   
 # 支持https
+
 ```
 wget https://www.openssl.org/source/openssl-1.1.1a.tar.gz
 
@@ -247,13 +262,14 @@ registry.cn-hangzhou.aliyuncs.com/onething/wxedge
 
 
 ```
+
 ## NPC
 
 ```
 docker run -d --name npc --net=host ffdfgdfg/npc -server=42.193.108.105:8024 -vkey=fyjgir97ba3h39wj
 ```
 
-##jellyfin
+## jellyfin
 
 
 ```
@@ -372,6 +388,30 @@ sudo /etc/init.d/dphys-swapfile start
 ## OpenMediaVault
 ```
 sudo wget -O - https://github.com/OpenMediaVault-Plugin-Developers/installScript/raw/master/install | sudo bash
+```
+
+## 安装可视化
+
+```
+sudo apt-get update   
+sudo apt-get upgrade
+sudo apt-get dist-upgrade
+sudo apt-get clean
+1、输入命令：sudo apt-get install ttf-wqy-zenhei ttf-wqy-microhei
+  2、输入命令：sudo raspi-config进入配置
+  3、选择Localisation Options
+  4、选择Locale
+  5、选择zh_CN.GBK和zh_CN.UTF-8(空格键)
+  6、再次选择zh_CN.UTF-8
+ sudo apt-get install --no-install-recommends xserver-xorg
+  sudo apt-get install --no-install-recommends xinit
+ sudo apt-get install lxde-core lxappearance
+ sudo apt-get install lightdm  
+ startx
+
+选择桌面环境
+sudo update-alternatives --config x-session-manager
+sudo apt-get install kodi
 ```
 
 ## bullseye 源
