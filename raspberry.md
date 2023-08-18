@@ -247,16 +247,16 @@ make install
 
 ```
 
-docker run \
+sudo docker run \
 --name=wxedge \
 --restart=always \
 --privileged \
 --net=host \
---tmpfs /mnt/sda1/wxedge/run \
---tmpfs /mnt/sda1/wxedge/tmp \
--v /mnt/sda1/wxedge:/storage:rw \
+--tmpfs /srv/dev-disk-by-uuid-94c7504b-b47b-4ab7-a272-4e5e7c7d6847/wxedge_storage/run \
+--tmpfs /srv/dev-disk-by-uuid-94c7504b-b47b-4ab7-a272-4e5e7c7d6847/wxedge_storage/tmp \
+-v /srv/dev-disk-by-uuid-94c7504b-b47b-4ab7-a272-4e5e7c7d6847/wxedge_storage:/storage:rw \
 -d \
-registry.cn-hangzhou.aliyuncs.com/onething/wxedge
+onething1/wxedge
 
 
 
