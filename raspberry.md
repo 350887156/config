@@ -78,7 +78,7 @@ sudo nano /etc/docker/daemon.json
 ```
 在/etc/docker/目录下创建daemon.json，添加如下内容：
 {
-"registry-mirrors": ["https://docker.mirrors.ustc.edu.cn/"],
+"registry-mirrors": ["http://hub-mirror.c.163.com","https://registry.docker-cn.com","https://docker.mirrors.ustc.edu.cn"]
 "data-root":"/mnt/sda1/dockers/"
 }
 sudo service docker restart
