@@ -45,8 +45,7 @@ sudo reboot
 ## 自动挂载硬盘
 
 ```
-df -lh
-lsblk
+fdisk -l
 sudo mkdir -p /mnt/sda1
 sudo nano /boot/rc-local
 sudo mount /dev/sda /mnt/sda1/
