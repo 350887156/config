@@ -61,6 +61,9 @@ sudo nano /etc/fstab
 
 ```
 sudo curl -sSL https://get.docker.com | sh
+systemctl enable docker
+
+
 ```
 ## piGPIO
 
@@ -86,6 +89,12 @@ sudo reboot
 
 sudo docker network create -d macvlan --subnet=192.168.1.0/24 --gateway=192.168.1.1 -o parent=eth0 macnet
 
+
+```
+
+```
+docker pull portainer/portainer
+docker run -dp 59000:9000 --restart=always -v /var/run/docker.sock:/var/run/docker.sock --name portainer portainer/portainer
 
 ```
 
